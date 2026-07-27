@@ -1033,16 +1033,16 @@
     <!-- MAIN JAVASCRIPT LOGIC -->
     <script type="module">
         // SAKLAR DEPLOYMENT & KONFIGURASI FIREBASE
-        window.IS_PREVIEW = false; // Set to 'false' jika sudah menghubungkan ke Firebase asli!
+        window.IS_PREVIEW = true; // Set to 'false' jika sudah menghubungkan ke Firebase asli!
 
         // PASTE FIREBASE CONFIG ANDA DI SINI
         window.firebaseConfig = {
-            apiKey: "AIzaSyAbE-MEVdJqRRkZTC08gsgwZRfpo6JCEVM",
-              authDomain: "walikelas-9f30e.firebaseapp.com",
-              projectId: "walikelas-9f30e",
-              storageBucket: "walikelas-9f30e.firebasestorage.app",
-              messagingSenderId: "214702458313",
-              appId: "1:214702458313:web:63020e693afc1f42449418"
+            apiKey: "API_KEY_FIREBASE_ANDA",
+            authDomain: "PROJECT_ID.firebaseapp.com",
+            projectId: "PROJECT_ID",
+            storageBucket: "PROJECT_ID.appspot.com",
+            messagingSenderId: "SENDER_ID",
+            appId: "APP_ID"
         };
 
         // INITIAL DEFAULT DATA STATE
@@ -1055,16 +1055,18 @@
                 headmasterNip: "19750812 200003 2 001",
                 teacherName: "Paskalia Ragha, S.Pd.",
                 teacherNip: "19880415 201502 1 002",
+                teacherEmail: "guru@smk.sch.id",
+                teacherPassword: "123456",
                 academicYear: "2026/2027",
                 kopMode: "text", // 'text' or 'banner'
                 kopBannerBase64: ""
             },
             students: [
-                { id: "S1", nisn: "0051234561", nis: "21001", name: "ALEXSANDER PONGO", gender: "L", classId: "C1", smpOrigin: "SMPN 1 Surabaya", phone: "081234567890" },
-                { id: "S2", nisn: "0051234562", nis: "21002", name: "ALFREDO OBA RA", gender: "L", classId: "C1", smpOrigin: "SMPN 2 Surabaya", phone: "081234567891" },
-                { id: "S3", nisn: "0051234563", nis: "21003", name: "ALFONSA AGUSTINA DOPO", gender: "P", classId: "C1", smpOrigin: "SMPN 4 Surabaya", phone: "081234567892" },
-                { id: "S4", nisn: "0051234564", nis: "21004", name: "ALOYSIUS GONZAGA BHUI", gender: "L", classId: "C1", smpOrigin: "SMP Katolik", phone: "081234567893" },
-                { id: "S5", nisn: "0051234565", nis: "21005", name: "ANICETO AGUSTINUS SARONG", gender: "L", classId: "C1", smpOrigin: "SMPN 5 Surabaya", phone: "081234567894" }
+                { id: "S1", nisn: "0051234561", nis: "21001", name: "ALEXSANDER PONGO", gender: "L", classId: "C1", smpOrigin: "SMPN 1 Surabaya", phone: "081234567890", password: "123456" },
+                { id: "S2", nisn: "0051234562", nis: "21002", name: "ALFREDO OBA RA", gender: "L", classId: "C1", smpOrigin: "SMPN 2 Surabaya", phone: "081234567891", password: "123456" },
+                { id: "S3", nisn: "0051234563", nis: "21003", name: "ALFONSA AGUSTINA DOPO", gender: "P", classId: "C1", smpOrigin: "SMPN 4 Surabaya", phone: "081234567892", password: "123456" },
+                { id: "S4", nisn: "0051234564", nis: "21004", name: "ALOYSIUS GONZAGA BHUI", gender: "L", classId: "C1", smpOrigin: "SMP Katolik", phone: "081234567893", password: "123456" },
+                { id: "S5", nisn: "0051234565", nis: "21005", name: "ANICETO AGUSTINUS SARONG", gender: "L", classId: "C1", smpOrigin: "SMPN 5 Surabaya", phone: "081234567894", password: "123456" }
             ],
             classes: [
                 { id: "C1", name: "X TEI", major: "Teknik Elektronika", gradeLevel: "X" },
@@ -1128,23 +1130,48 @@
         };
 
         window.doLogin = function(type) {
+            window.loadStateFromStorage(); // Ensure latest data loaded before checking login
+            
             if (type === 'teacher') {
-                const email = document.getElementById('login-email')?.value;
-                const pass = document.getElementById('login-password')?.value;
+                const email = document.getElementById('login-email')?.value?.trim();
+                const pass = document.getElementById('login-password')?.value?.trim();
                 if (!email || !pass) {
-                    window.showToast('Harap masukkan Email dan Password!', 'error');
+                    window.showToast('Harap masukkan Email dan Password Guru!', 'error');
                     return;
                 }
+                
+                const expectedEmail = window.dbState.settings.teacherEmail || 'guru@smk.sch.id';
+                const expectedPass = window.dbState.settings.teacherPassword || '123456';
+
+                if (email.toLowerCase() !== expectedEmail.toLowerCase() || pass !== expectedPass) {
+                    window.showToast('Email atau Password Guru Salah!', 'error');
+                    return;
+                }
+
                 const session = { role: 'teacher', name: window.dbState.settings.teacherName || 'Guru Pengajar' };
                 localStorage.setItem('ejurnal_session', JSON.stringify(session));
                 window.showToast('Login Guru Berhasil!', 'success');
             } else {
-                const nisn = document.getElementById('login-nisn')?.value;
-                const student = window.dbState.students.find(s => s.nisn === nisn || s.nis === nisn);
-                if (!student) {
-                    window.showToast('NISN / NIS tidak ditemukan!', 'error');
+                const nisn = document.getElementById('login-nisn')?.value?.trim();
+                const pass = document.getElementById('login-student-pass')?.value?.trim();
+
+                if (!nisn || !pass) {
+                    window.showToast('Harap masukkan NISN/NIS dan Password Siswa!', 'error');
                     return;
                 }
+
+                const student = window.dbState.students.find(s => s.nisn === nisn || s.nis === nisn);
+                if (!student) {
+                    window.showToast('NISN / NIS Siswa tidak ditemukan!', 'error');
+                    return;
+                }
+
+                const studentPass = student.password || '123456';
+                if (pass !== studentPass) {
+                    window.showToast('PIN / Password Siswa Salah!', 'error');
+                    return;
+                }
+
                 const session = { role: 'student', studentId: student.id, name: student.name };
                 localStorage.setItem('ejurnal_session', JSON.stringify(session));
                 window.showToast(`Selamat Datang, ${student.name}!`, 'success');
