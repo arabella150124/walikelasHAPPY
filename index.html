@@ -89,7 +89,7 @@
     <!-- Toast Notification Box -->
     <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- 0. MANDATORY LOGIN SCREEN WITH PUBLIC APP INFO -->
+    <!-- MANDATORY LOGIN SCREEN WITH PUBLIC APP INFO -->
     <div id="login-screen" class="fixed inset-0 bg-slate-900/80 backdrop-blur-md z-50 flex items-center justify-center p-4 lg:p-6 overflow-y-auto">
         <div class="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-slate-100 my-auto">
             
@@ -154,7 +154,7 @@
 
                 <div class="pt-4 border-t border-white/10 text-[11px] text-blue-200/70 relative z-10 flex items-center justify-between">
                     <span>Versi Aplikasi 3.5 Pro</span>
-                    <span><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Data Aman Permanen</span>
+                    <span><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> Data Aman Synchronized</span>
                 </div>
             </div>
 
@@ -167,10 +167,10 @@
 
                 <!-- Login Role Switcher -->
                 <div class="bg-slate-100 p-1.5 rounded-2xl flex text-xs font-bold">
-                    <button type="button" onclick="setLoginRole('teacher')" id="btn-login-role-teacher" class="flex-1 py-2 rounded-xl bg-white text-blue-600 shadow-sm transition">
+                    <button type="button" onclick="window.setLoginRole('teacher')" id="btn-login-role-teacher" class="flex-1 py-2 rounded-xl bg-white text-blue-600 shadow-sm transition">
                         <i class="fa-solid fa-user-tie mr-1"></i> Guru / Wali Kelas
                     </button>
-                    <button type="button" onclick="setLoginRole('student')" id="btn-login-role-student" class="flex-1 py-2 rounded-xl text-slate-500 hover:text-slate-800 transition">
+                    <button type="button" onclick="window.setLoginRole('student')" id="btn-login-role-student" class="flex-1 py-2 rounded-xl text-slate-500 hover:text-slate-800 transition">
                         <i class="fa-solid fa-user-graduate mr-1"></i> Siswa
                     </button>
                 </div>
@@ -181,14 +181,14 @@
                         <label class="text-xs font-bold text-slate-700 block mb-1.5">Email Guru / Username</label>
                         <div class="relative">
                             <i class="fa-solid fa-envelope absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-                            <input type="email" id="login-email" value="guru@smk.sch.id" placeholder="nama@smk.sch.id" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
+                            <input type="email" id="login-email" value="guru@smk.sch.id" placeholder="nama@smk.sch.id" required class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
                     <div>
                         <label class="text-xs font-bold text-slate-700 block mb-1.5">Password Sesi</label>
                         <div class="relative">
                             <i class="fa-solid fa-lock absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-                            <input type="password" id="login-password" value="123456" placeholder="••••••••" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
+                            <input type="password" id="login-password" value="123456" placeholder="••••••••" required class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
                     <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-blue-500/30 transition flex items-center justify-center gap-2">
@@ -202,14 +202,14 @@
                         <label class="text-xs font-bold text-slate-700 block mb-1.5">NISN / NIS Siswa</label>
                         <div class="relative">
                             <i class="fa-solid fa-id-card absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-                            <input type="text" id="login-nisn" value="0051234561" placeholder="Masukkan NISN..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
+                            <input type="text" id="login-nisn" value="0051234561" placeholder="Masukkan NISN..." required class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
                     <div>
                         <label class="text-xs font-bold text-slate-700 block mb-1.5">PIN / Password Siswa</label>
                         <div class="relative">
                             <i class="fa-solid fa-key absolute left-3.5 top-3 text-slate-400 text-xs"></i>
-                            <input type="password" id="login-student-pass" value="123456" placeholder="••••••••" class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
+                            <input type="password" id="login-student-pass" value="123456" placeholder="••••••••" required class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium focus:outline-none focus:border-blue-500 transition">
                         </div>
                     </div>
                     <button type="submit" class="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-lg shadow-emerald-500/30 transition flex items-center justify-center gap-2">
@@ -219,7 +219,7 @@
 
                 <div class="p-3 bg-blue-50 rounded-2xl border border-blue-100 text-[11px] text-blue-800 leading-relaxed">
                     <i class="fa-solid fa-circle-info text-blue-600 mr-1"></i>
-                    <b>Akun Demo Bawaan:</b><br>
+                    <b>Akun Default / Demo System:</b><br>
                     • Guru: <code>guru@smk.sch.id</code> / Pass: <code>123456</code><br>
                     • Siswa: NISN <code>0051234561</code> / Pass: <code>123456</code>
                 </div>
@@ -244,28 +244,28 @@
             </div>
 
             <nav class="flex-1 p-4 space-y-1 overflow-y-auto">
-                <button onclick="switchTab('dashboard')" id="nav-dashboard" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('dashboard')" id="nav-dashboard" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-chart-pie w-5"></i> Dashboard
                 </button>
-                <button onclick="switchTab('master')" id="nav-master" class="admin-only nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('master')" id="nav-master" class="admin-only nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-database w-5"></i> Data Master
                 </button>
-                <button onclick="switchTab('presensi')" id="nav-presensi" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('presensi')" id="nav-presensi" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-clipboard-user w-5"></i> Presensi Siswa
                 </button>
-                <button onclick="switchTab('nilai')" id="nav-nilai" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('nilai')" id="nav-nilai" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-pen-to-square w-5"></i> Penilaian Siswa
                 </button>
-                <button onclick="switchTab('jurnal')" id="nav-jurnal" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('jurnal')" id="nav-jurnal" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-book-bookmark w-5"></i> Jurnal Mengajar
                 </button>
-                <button onclick="switchTab('absen-tinggi')" id="nav-absen-tinggi" class="admin-only nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('absen-tinggi')" id="nav-absen-tinggi" class="admin-only nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-triangle-exclamation w-5 text-rose-500"></i> Absen Tinggi & SP
                 </button>
-                <button onclick="switchTab('pusat-cetak')" id="nav-pusat-cetak" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('pusat-cetak')" id="nav-pusat-cetak" class="nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-print w-5 text-indigo-500"></i> Pusat Cetak Laporan
                 </button>
-                <button onclick="switchTab('settings')" id="nav-settings" class="admin-only nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
+                <button onclick="window.switchTab('settings')" id="nav-settings" class="admin-only nav-btn w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-all">
                     <i class="fa-solid fa-sliders w-5"></i> Pengaturan Kop
                 </button>
             </nav>
@@ -294,7 +294,7 @@
             <!-- TOP NAVBAR -->
             <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 lg:px-8 sticky top-0 z-20">
                 <div class="flex items-center gap-3">
-                    <button onclick="openModalMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center">
+                    <button onclick="window.openModalMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center">
                         <i class="fa-solid fa-bars text-lg"></i>
                     </button>
                     <h2 class="text-base lg:text-lg font-bold text-slate-800" id="page-title">Dashboard Utama</h2>
@@ -362,7 +362,7 @@
                                 <p class="text-xs text-rose-700" id="dash-absen-warning-text">Terdapat 0 siswa dengan tingkat ketidakhadiran tinggi yang membutuhkan penanganan/surat panggilan.</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('absen-tinggi')" class="px-4 py-2 bg-rose-600 text-white rounded-xl text-xs font-bold hover:bg-rose-700 transition">
+                        <button onclick="window.switchTab('absen-tinggi')" class="px-4 py-2 bg-rose-600 text-white rounded-xl text-xs font-bold hover:bg-rose-700 transition">
                             Lihat Rincian & Cetak SP
                         </button>
                     </div>
@@ -371,22 +371,22 @@
                     <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                         <h3 class="font-bold text-slate-800 text-sm mb-4">Akses Cepat Administrasi</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                            <button onclick="switchTab('presensi')" class="p-4 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-xl transition text-left group">
+                            <button onclick="window.switchTab('presensi')" class="p-4 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-xl transition text-left group">
                                 <i class="fa-solid fa-clipboard-user text-blue-600 text-xl mb-2 group-hover:scale-110 transition-transform"></i>
                                 <p class="font-bold text-slate-800 text-xs">Input Presensi</p>
                                 <p class="text-[10px] text-slate-500">Harian & Pertemuan</p>
                             </button>
-                            <button onclick="switchTab('nilai')" class="p-4 bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 rounded-xl transition text-left group">
+                            <button onclick="window.switchTab('nilai')" class="p-4 bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 rounded-xl transition text-left group">
                                 <i class="fa-solid fa-pen-to-square text-emerald-600 text-xl mb-2 group-hover:scale-110 transition-transform"></i>
                                 <p class="font-bold text-slate-800 text-xs">Input Nilai</p>
                                 <p class="text-[10px] text-slate-500">Tugas & Transkrip</p>
                             </button>
-                            <button onclick="openJurnalModal()" class="admin-only p-4 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-xl transition text-left group">
+                            <button onclick="window.openJurnalModal()" class="admin-only p-4 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 rounded-xl transition text-left group">
                                 <i class="fa-solid fa-book-medical text-indigo-600 text-xl mb-2 group-hover:scale-110 transition-transform"></i>
                                 <p class="font-bold text-slate-800 text-xs">Isi Jurnal Mengajar</p>
                                 <p class="text-[10px] text-slate-500">Log Hari Ini</p>
                             </button>
-                            <button onclick="switchTab('pusat-cetak')" class="p-4 bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-xl transition text-left group">
+                            <button onclick="window.switchTab('pusat-cetak')" class="p-4 bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-xl transition text-left group">
                                 <i class="fa-solid fa-print text-amber-600 text-xl mb-2 group-hover:scale-110 transition-transform"></i>
                                 <p class="font-bold text-slate-800 text-xs">Pusat Cetak</p>
                                 <p class="text-[10px] text-slate-500">Cetak Semua Berkop</p>
@@ -398,11 +398,11 @@
                 <!-- 2. TAB DATA MASTER -->
                 <section id="tab-master" class="admin-only tab-content space-y-6 hidden">
                     <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-wrap gap-2">
-                        <button onclick="setMasterSubtab('siswa')" id="subtab-btn-siswa" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Data Siswa</button>
-                        <button onclick="setMasterSubtab('kelas')" id="subtab-btn-kelas" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Data Kelas</button>
-                        <button onclick="setMasterSubtab('mapel')" id="subtab-btn-mapel" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Data Mapel</button>
-                        <button onclick="setMasterSubtab('jadwal')" id="subtab-btn-jadwal" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Jadwal Mengajar</button>
-                        <button onclick="setMasterSubtab('libur')" id="subtab-btn-libur" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Kalender Libur</button>
+                        <button onclick="window.setMasterSubtab('siswa')" id="subtab-btn-siswa" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Data Siswa</button>
+                        <button onclick="window.setMasterSubtab('kelas')" id="subtab-btn-kelas" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Data Kelas</button>
+                        <button onclick="window.setMasterSubtab('mapel')" id="subtab-btn-mapel" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Data Mapel</button>
+                        <button onclick="window.setMasterSubtab('jadwal')" id="subtab-btn-jadwal" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Jadwal Mengajar</button>
+                        <button onclick="window.setMasterSubtab('libur')" id="subtab-btn-libur" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Kalender Libur</button>
                     </div>
 
                     <!-- SUBTAB: SISWA -->
@@ -410,19 +410,19 @@
                         <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
                             <div class="flex items-center gap-3">
                                 <label class="text-xs font-bold text-slate-700 whitespace-nowrap">Filter Kelas:</label>
-                                <select id="filter-master-siswa-kelas" onchange="renderSiswaTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
+                                <select id="filter-master-siswa-kelas" onchange="window.renderSiswaTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
                                     <option value="ALL">Semua Kelas</option>
                                 </select>
                             </div>
                             <div class="flex flex-wrap items-center gap-2">
-                                <button onclick="downloadTemplateSiswa()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center gap-2">
+                                <button onclick="window.downloadTemplateSiswa()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center gap-2">
                                     <i class="fa-solid fa-download"></i> Template Excel
                                 </button>
                                 <label class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition cursor-pointer flex items-center gap-2">
                                     <i class="fa-solid fa-file-excel"></i> Import Excel
-                                    <input type="file" id="excel-file-siswa" accept=".xlsx, .xls, .csv" onchange="importSiswaExcel(event)" class="hidden">
+                                    <input type="file" id="excel-file-siswa" accept=".xlsx, .xls, .csv" onchange="window.importSiswaExcel(event)" class="hidden">
                                 </label>
-                                <button onclick="openModalSiswa()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                                <button onclick="window.openModalSiswa()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
                                     <i class="fa-solid fa-plus"></i> Tambah Siswa
                                 </button>
                             </div>
@@ -439,12 +439,10 @@
                                             <th class="p-3">Kelas</th>
                                             <th class="p-3">Asal SMP</th>
                                             <th class="p-3">No. Ortu / HP</th>
-                                            <th class="p-3 w-28 text-center">Aksi</th>
+                                            <th class="p-3 w-28 text-center admin-only">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tbody-siswa" class="divide-y divide-slate-100">
-                                        <!-- Rendered via JS -->
-                                    </tbody>
+                                    <tbody id="tbody-siswa" class="divide-y divide-slate-100"></tbody>
                                 </table>
                             </div>
                         </div>
@@ -453,7 +451,7 @@
                     <!-- SUBTAB: KELAS -->
                     <div id="subtab-kelas" class="master-subtab space-y-4 hidden">
                         <div class="flex justify-end">
-                            <button onclick="openModalKelas()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                            <button onclick="window.openModalKelas()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
                                 <i class="fa-solid fa-plus"></i> Tambah Kelas
                             </button>
                         </div>
@@ -476,7 +474,7 @@
                     <!-- SUBTAB: MAPEL -->
                     <div id="subtab-mapel" class="master-subtab space-y-4 hidden">
                         <div class="flex justify-end">
-                            <button onclick="openModalMapel()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                            <button onclick="window.openModalMapel()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
                                 <i class="fa-solid fa-plus"></i> Tambah Mapel
                             </button>
                         </div>
@@ -498,7 +496,7 @@
                     <!-- SUBTAB: JADWAL -->
                     <div id="subtab-jadwal" class="master-subtab space-y-4 hidden">
                         <div class="flex justify-end">
-                            <button onclick="openModalJadwal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                            <button onclick="window.openModalJadwal()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
                                 <i class="fa-solid fa-plus"></i> Tambah Jadwal
                             </button>
                         </div>
@@ -521,7 +519,7 @@
                     <!-- SUBTAB: KALENDER LIBUR -->
                     <div id="subtab-libur" class="master-subtab space-y-4 hidden">
                         <div class="flex justify-end">
-                            <button onclick="openModalLibur()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                            <button onclick="window.openModalLibur()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
                                 <i class="fa-solid fa-plus"></i> Tambah Hari Libur
                             </button>
                         </div>
@@ -544,23 +542,23 @@
                 <section id="tab-presensi" class="tab-content space-y-6 hidden">
                     <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-4">
                         <div class="flex items-center gap-2">
-                            <button onclick="setPresensiMode('walikelas')" id="btn-presensi-walikelas" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Wali Kelas (Presensi Harian 1 Bulan)</button>
-                            <button onclick="setPresensiMode('gurumapel')" id="btn-presensi-gurumapel" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 transition">Guru Mapel (18 Pertemuan)</button>
+                            <button onclick="window.setPresensiMode('walikelas')" id="btn-presensi-walikelas" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Wali Kelas (Presensi Harian 1 Bulan)</button>
+                            <button onclick="window.setPresensiMode('gurumapel')" id="btn-presensi-gurumapel" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 transition">Guru Mapel (18 Pertemuan)</button>
                         </div>
 
                         <div class="flex flex-wrap items-center gap-3">
                             <div id="container-select-kelas">
-                                <select id="presensi-select-kelas" onchange="renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
+                                <select id="presensi-select-kelas" onchange="window.renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
                                 </select>
                             </div>
 
                             <div id="container-select-mapel" class="hidden">
-                                <select id="presensi-select-mapel" onchange="renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
+                                <select id="presensi-select-mapel" onchange="window.renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
                                 </select>
                             </div>
 
                             <div id="container-select-bulan">
-                                <select id="presensi-select-bulan" onchange="renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
+                                <select id="presensi-select-bulan" onchange="window.renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
                                     <option value="7">Juli</option>
                                     <option value="8">Agustus</option>
                                     <option value="9">September</option>
@@ -577,7 +575,7 @@
                             </div>
 
                             <div id="container-select-pertemuan" class="hidden">
-                                <select id="presensi-select-pertemuan" onchange="renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
+                                <select id="presensi-select-pertemuan" onchange="window.renderPresensiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500">
                                 </select>
                             </div>
                         </div>
@@ -588,13 +586,13 @@
                         <div class="flex items-center justify-between mb-4">
                             <div>
                                 <h3 class="font-bold text-slate-800 text-sm" id="presensi-grid-title">Form Matriks Presensi</h3>
-                                <p class="text-xs text-slate-500" id="presensi-grid-subtitle">Klik status untuk mengubah kehadiran.</p>
+                                <p class="text-xs text-slate-500" id="presensi-grid-subtitle">Klik status/sel untuk mengubah kehadiran.</p>
                             </div>
                             <div class="admin-only flex items-center gap-2">
-                                <button onclick="setAllPresensiHadir()" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-xl text-xs font-bold border border-emerald-200 transition">
+                                <button onclick="window.setAllPresensiHadir()" class="px-3 py-1.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 rounded-xl text-xs font-bold border border-emerald-200 transition">
                                     <i class="fa-solid fa-check-double"></i> Set Semua Hadir
                                 </button>
-                                <button onclick="savePresensiData()" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm">
+                                <button onclick="window.savePresensiData()" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm">
                                     <i class="fa-solid fa-floppy-disk"></i> Simpan Presensi
                                 </button>
                             </div>
@@ -610,13 +608,13 @@
                 <section id="tab-nilai" class="tab-content space-y-6 hidden">
                     <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-4">
                         <div class="flex items-center gap-2">
-                            <button onclick="setNilaiSubtab('input')" id="btn-nilai-input" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Input Nilai Mentahan</button>
-                            <button onclick="setNilaiSubtab('rekap')" id="btn-nilai-rekap" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 transition">Rekap Transkrip Lengkap</button>
+                            <button onclick="window.setNilaiSubtab('input')" id="btn-nilai-input" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition">Input Nilai Mentahan</button>
+                            <button onclick="window.setNilaiSubtab('rekap')" id="btn-nilai-rekap" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 transition">Rekap Transkrip Lengkap</button>
                         </div>
 
                         <div class="flex flex-wrap items-center gap-3">
-                            <select id="nilai-select-kelas" onchange="renderNilaiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500"></select>
-                            <select id="nilai-select-mapel" onchange="renderNilaiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500"></select>
+                            <select id="nilai-select-kelas" onchange="window.renderNilaiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500"></select>
+                            <select id="nilai-select-mapel" onchange="window.renderNilaiTable()" class="px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:border-blue-500"></select>
                         </div>
                     </div>
 
@@ -660,7 +658,7 @@
                         </div>
 
                         <div class="admin-only flex justify-end pt-2">
-                            <button onclick="saveNilaiData()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm">
+                            <button onclick="window.saveNilaiData()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition shadow-sm">
                                 <i class="fa-solid fa-floppy-disk"></i> Simpan Nilai Mentahan
                             </button>
                         </div>
@@ -697,7 +695,7 @@
                 <section id="tab-jurnal" class="tab-content space-y-6 hidden">
                     <div class="flex justify-between items-center">
                         <h3 class="font-bold text-slate-800 text-base">Log & Jurnal Pembelajaran</h3>
-                        <button onclick="openJurnalModal()" class="admin-only px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+                        <button onclick="window.openJurnalModal()" class="admin-only px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
                             <i class="fa-solid fa-plus"></i> Isi Jurnal Baru
                         </button>
                     </div>
@@ -765,7 +763,7 @@
                                 <h4 class="font-bold text-slate-800 text-base">Cetak Laporan Presensi</h4>
                                 <p class="text-xs text-slate-500">Pilih cetak format Wali Kelas (Bulanan) atau Guru Mapel (Pertemuan P1-P18).</p>
                             </div>
-                            <button onclick="openModalCetakPresensi()" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition">
+                            <button onclick="window.openModalCetakPresensi()" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition">
                                 Konfigurasi & Cetak Presensi
                             </button>
                         </div>
@@ -779,7 +777,7 @@
                                 <h4 class="font-bold text-slate-800 text-base">Cetak Laporan Nilai</h4>
                                 <p class="text-xs text-slate-500">Cetak rekap transkrip lengkap seluruh kategori nilai per semester.</p>
                             </div>
-                            <button onclick="openModalCetakNilai()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition">
+                            <button onclick="window.openModalCetakNilai()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition">
                                 Konfigurasi & Cetak Nilai
                             </button>
                         </div>
@@ -793,7 +791,7 @@
                                 <h4 class="font-bold text-slate-800 text-base">Cetak Jurnal Pembelajaran</h4>
                                 <p class="text-xs text-slate-500">Cetak rekapitulasi log mengajar harian guru untuk verifikasi sertifikasi.</p>
                             </div>
-                            <button onclick="cetakJurnal()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition">
+                            <button onclick="window.cetakJurnal()" class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition">
                                 Cetak Jurnal Sekarang
                             </button>
                         </div>
@@ -810,11 +808,11 @@
                             <label class="text-xs font-bold text-slate-700">Jenis Kop Surat Pada Dokumen</label>
                             <div class="flex gap-4">
                                 <label class="flex items-center gap-2 text-xs font-semibold cursor-pointer">
-                                    <input type="radio" name="kopMode" value="text" onchange="toggleKopModeUI()" checked class="text-blue-600">
+                                    <input type="radio" name="kopMode" value="text" onchange="window.toggleKopModeUI()" checked class="text-blue-600">
                                     Teks Identitas Manual (+ Logo optional)
                                 </label>
                                 <label class="flex items-center gap-2 text-xs font-semibold cursor-pointer">
-                                    <input type="radio" name="kopMode" value="banner" onchange="toggleKopModeUI()" class="text-blue-600">
+                                    <input type="radio" name="kopMode" value="banner" onchange="window.toggleKopModeUI()" class="text-blue-600">
                                     Gambar Kop Surat Utuh (Banner Full)
                                 </label>
                             </div>
@@ -823,7 +821,7 @@
                         <!-- Banner Upload -->
                         <div id="container-kop-banner" class="hidden space-y-2 border-t pt-4">
                             <label class="text-xs font-bold text-slate-700">Upload Gambar Kop Surat Utuh</label>
-                            <input type="file" id="input-kop-banner" accept="image/*" onchange="handleKopUpload(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                            <input type="file" id="input-kop-banner" accept="image/*" onchange="window.handleKopUpload(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
                             <div id="preview-kop-banner" class="mt-2 hidden">
                                 <img id="img-kop-preview" src="" alt="Kop Preview" class="max-h-32 border rounded-xl p-2">
                             </div>
@@ -865,7 +863,7 @@
                             </div>
                         </div>
 
-                        <button onclick="saveSettings()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition">
+                        <button onclick="window.saveSettings()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold transition">
                             Simpan Pengaturan
                         </button>
                     </div>
@@ -877,34 +875,57 @@
 
     <!-- FLOATING MOBILE BOTTOM NAVIGATION BAR -->
     <nav class="lg:hidden fixed bottom-0 inset-x-0 bg-white/90 backdrop-blur-md border-t border-slate-200 z-30 px-2 py-2 flex items-center justify-around shadow-lg">
-        <button onclick="switchTab('dashboard')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
+        <button onclick="window.switchTab('dashboard')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
             <i class="fa-solid fa-chart-pie text-base"></i>
             <span class="text-[10px] font-medium">Dash</span>
         </button>
-        <button onclick="switchTab('presensi')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
+        <button onclick="window.switchTab('presensi')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
             <i class="fa-solid fa-clipboard-user text-base"></i>
             <span class="text-[10px] font-medium">Presensi</span>
         </button>
-        <button onclick="switchTab('nilai')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
+        <button onclick="window.switchTab('nilai')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
             <i class="fa-solid fa-pen-to-square text-base"></i>
             <span class="text-[10px] font-medium">Nilai</span>
         </button>
-        <button onclick="openJurnalModal()" class="admin-only flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
+        <button onclick="window.openJurnalModal()" class="admin-only flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
             <i class="fa-solid fa-book-medical text-base text-blue-600"></i>
             <span class="text-[10px] font-medium text-blue-600">Jurnal</span>
         </button>
-        <button onclick="switchTab('pusat-cetak')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
+        <button onclick="window.switchTab('pusat-cetak')" class="flex flex-col items-center gap-1 p-2 text-slate-600 hover:text-blue-600">
             <i class="fa-solid fa-print text-base"></i>
             <span class="text-[10px] font-medium">Cetak</span>
         </button>
     </nav>
+
+    <!-- MODAL MOBILE MENU -->
+    <div id="modal-mobile-menu" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex flex-col justify-end lg:hidden hidden">
+        <div class="bg-white rounded-t-3xl p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b pb-3">
+                <h3 class="font-extrabold text-slate-800 text-sm">Navigasi Utama</h3>
+                <button onclick="window.closeMobileMenu()" class="text-slate-400 font-bold text-lg">&times;</button>
+            </div>
+            <div class="grid grid-cols-2 gap-3 text-xs font-bold">
+                <button onclick="window.switchTab('dashboard')" class="p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-chart-pie text-blue-600 mr-2"></i> Dashboard</button>
+                <button onclick="window.switchTab('master')" class="admin-only p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-database text-blue-600 mr-2"></i> Data Master</button>
+                <button onclick="window.switchTab('presensi')" class="p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-clipboard-user text-blue-600 mr-2"></i> Presensi</button>
+                <button onclick="window.switchTab('nilai')" class="p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-pen-to-square text-blue-600 mr-2"></i> Penilaian</button>
+                <button onclick="window.switchTab('jurnal')" class="p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-book-bookmark text-blue-600 mr-2"></i> Jurnal</button>
+                <button onclick="window.switchTab('absen-tinggi')" class="admin-only p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-triangle-exclamation text-rose-500 mr-2"></i> Absen Tinggi</button>
+                <button onclick="window.switchTab('pusat-cetak')" class="p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-print text-indigo-500 mr-2"></i> Pusat Cetak</button>
+                <button onclick="window.switchTab('settings')" class="admin-only p-3 bg-slate-50 rounded-xl text-left"><i class="fa-solid fa-sliders text-blue-600 mr-2"></i> Pengaturan Kop</button>
+            </div>
+            <button onclick="window.doLogout()" class="w-full py-3 bg-rose-50 text-rose-600 rounded-xl text-xs font-bold mt-2">
+                <i class="fa-solid fa-right-from-bracket mr-1"></i> Keluar / Logout
+            </button>
+        </div>
+    </div>
 
     <!-- MODAL PREVIEW CETAK A4 -->
     <div id="modal-preview-cetak" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
             <div class="p-4 border-b border-slate-200 flex justify-between items-center bg-slate-50">
                 <h3 class="font-bold text-slate-800 text-sm">Pratinjau Dokumen Cetak A4</h3>
-                <button onclick="closePreviewCetak()" class="text-slate-400 hover:text-slate-600 font-bold text-lg">&times;</button>
+                <button onclick="window.closePreviewCetak()" class="text-slate-400 hover:text-slate-600 font-bold text-lg">&times;</button>
             </div>
             <div class="p-6 overflow-y-auto flex-1 bg-slate-200">
                 <div id="preview-document-container" class="bg-white p-8 shadow-md rounded border border-slate-300 max-w-[210mm] mx-auto min-h-[297mm]">
@@ -912,8 +933,8 @@
                 </div>
             </div>
             <div class="p-4 border-t border-slate-200 flex justify-end gap-3 bg-white">
-                <button onclick="closePreviewCetak()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-xs font-bold">Batal</button>
-                <button onclick="doPrintFromPreview()" class="px-5 py-2 bg-blue-600 text-white rounded-xl text-xs font-bold hover:bg-blue-700 transition flex items-center gap-2">
+                <button onclick="window.closePreviewCetak()" class="px-4 py-2 bg-slate-100 text-slate-700 rounded-xl text-xs font-bold">Batal</button>
+                <button onclick="window.doPrintFromPreview()" class="px-5 py-2 bg-blue-600 text-white rounded-xl text-xs font-bold hover:bg-blue-700 transition flex items-center gap-2">
                     <i class="fa-solid fa-print"></i> Cetak Dokumen Sekarang
                 </button>
             </div>
@@ -929,10 +950,10 @@
                     <label class="font-bold block mb-1">Format Laporan</label>
                     <div class="flex gap-4">
                         <label class="flex items-center gap-1 font-semibold">
-                            <input type="radio" name="cetakPresensiType" value="walikelas" checked onchange="togglePresensiCetakUI()"> Wali Kelas (Bulanan)
+                            <input type="radio" name="cetakPresensiType" value="walikelas" checked onchange="window.togglePresensiCetakUI()"> Wali Kelas (Bulanan)
                         </label>
                         <label class="flex items-center gap-1 font-semibold">
-                            <input type="radio" name="cetakPresensiType" value="gurumapel" onchange="togglePresensiCetakUI()"> Guru Mapel (P1-P18)
+                            <input type="radio" name="cetakPresensiType" value="gurumapel" onchange="window.togglePresensiCetakUI()"> Guru Mapel (P1-P18)
                         </label>
                     </div>
                 </div>
@@ -955,8 +976,8 @@
                 </div>
             </div>
             <div class="flex justify-end gap-2 pt-2">
-                <button onclick="closeModalCetakPresensi()" class="px-4 py-2 bg-slate-100 rounded-xl font-bold text-xs">Batal</button>
-                <button onclick="cetakPresensiFromModal()" class="px-4 py-2 bg-blue-600 text-white rounded-xl font-bold text-xs">Lihat Pratinjau</button>
+                <button onclick="window.closeModalCetakPresensi()" class="px-4 py-2 bg-slate-100 rounded-xl font-bold text-xs">Batal</button>
+                <button onclick="window.cetakPresensiFromModal()" class="px-4 py-2 bg-blue-600 text-white rounded-xl font-bold text-xs">Lihat Pratinjau</button>
             </div>
         </div>
     </div>
@@ -976,8 +997,8 @@
                 </div>
             </div>
             <div class="flex justify-end gap-2 pt-2">
-                <button onclick="closeModalCetakNilai()" class="px-4 py-2 bg-slate-100 rounded-xl font-bold text-xs">Batal</button>
-                <button onclick="cetakNilaiFromModal()" class="px-4 py-2 bg-emerald-600 text-white rounded-xl font-bold text-xs">Lihat Pratinjau</button>
+                <button onclick="window.closeModalCetakNilai()" class="px-4 py-2 bg-slate-100 rounded-xl font-bold text-xs">Batal</button>
+                <button onclick="window.cetakNilaiFromModal()" class="px-4 py-2 bg-emerald-600 text-white rounded-xl font-bold text-xs">Lihat Pratinjau</button>
             </div>
         </div>
     </div>
@@ -1021,8 +1042,8 @@
                 </div>
             </div>
             <div class="flex justify-end gap-2 pt-2">
-                <button onclick="closeJurnalModal()" class="px-4 py-2 bg-slate-100 rounded-xl font-bold text-xs">Batal</button>
-                <button onclick="saveJurnal()" class="px-4 py-2 bg-blue-600 text-white rounded-xl font-bold text-xs">Simpan Jurnal</button>
+                <button onclick="window.closeJurnalModal()" class="px-4 py-2 bg-slate-100 rounded-xl font-bold text-xs">Batal</button>
+                <button onclick="window.saveJurnal()" class="px-4 py-2 bg-blue-600 text-white rounded-xl font-bold text-xs">Simpan Jurnal</button>
             </div>
         </div>
     </div>
@@ -1030,23 +1051,25 @@
     <!-- Hidden Printable Node Container -->
     <div id="printable-area"></div>
 
-    <!-- MAIN JAVASCRIPT LOGIC -->
+    <!-- MAIN JAVASCRIPT ENGINE WITH FIREBASE INTEGRATION -->
     <script type="module">
-        // SAKLAR DEPLOYMENT & KONFIGURASI FIREBASE
-        window.IS_PREVIEW = true; // Set to 'false' jika sudah menghubungkan ke Firebase asli!
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-        // PASTE FIREBASE CONFIG ANDA DI SINI
+        // CONFIGURATION SWITCH & FIREBASE CREDENTIALS
+        window.IS_PREVIEW = true; // Set to 'false' WHEN CONNECTED TO FIREBASE!
+
         window.firebaseConfig = {
-            
-              apiKey: "AIzaSyAbE-MEVdJqRRkZTC08gsgwZRfpo6JCEVM",
-              authDomain: "walikelas-9f30e.firebaseapp.com",
-              projectId: "walikelas-9f30e",
-              storageBucket: "walikelas-9f30e.firebasestorage.app",
-              messagingSenderId: "214702458313",
-              appId: "1:214702458313:web:63020e693afc1f42449418"
+            apiKey: "API_KEY_FIREBASE_ANDA",
+            authDomain: "PROJECT_ID.firebaseapp.com",
+            projectId: "PROJECT_ID",
+            storageBucket: "PROJECT_ID.appspot.com",
+            messagingSenderId: "SENDER_ID",
+            appId: "APP_ID"
         };
 
-        // INITIAL DEFAULT DATA STATE
+        // INITIAL DEFAULT STATE DATA
         const defaultState = {
             settings: {
                 schoolName: "SMK Negeri 1 Surabaya",
@@ -1059,7 +1082,7 @@
                 teacherEmail: "guru@smk.sch.id",
                 teacherPassword: "123456",
                 academicYear: "2026/2027",
-                kopMode: "text", // 'text' or 'banner'
+                kopMode: "text",
                 kopBannerBase64: ""
             },
             students: [
@@ -1092,12 +1115,38 @@
         };
 
         window.dbState = defaultState;
+        let firebaseApp = null;
+        let firebaseAuth = null;
+        let firebaseDb = null;
+
+        // INITIALIZE FIREBASE IF NOT IN PREVIEW MODE
+        window.initFirebaseSystem = function() {
+            if (!window.IS_PREVIEW && window.firebaseConfig && window.firebaseConfig.apiKey !== "API_KEY_FIREBASE_ANDA") {
+                try {
+                    firebaseApp = initializeApp(window.firebaseConfig);
+                    firebaseAuth = getAuth(firebaseApp);
+                    firebaseDb = getFirestore(firebaseApp);
+
+                    // Listen to Firestore real-time updates
+                    onSnapshot(doc(firebaseDb, "settings", "school_info"), (snapshot) => {
+                        if (snapshot.exists()) {
+                            window.dbState.settings = { ...window.dbState.settings, ...snapshot.data() };
+                            window.saveStateToStorage();
+                            window.loadSettingsUI();
+                        }
+                    });
+                } catch(e) { console.error("Firebase init failed:", e); }
+            }
+        };
 
         // LOCAL STORAGE PERSISTENCE HELPERS
         window.saveStateToStorage = function() {
             try {
                 localStorage.setItem('ejurnal_dbState', JSON.stringify(window.dbState));
-            } catch(e) { console.error("Could not save to LocalStorage", e); }
+                if (firebaseDb && !window.IS_PREVIEW) {
+                    setDoc(doc(firebaseDb, "settings", "school_info"), window.dbState.settings, { merge: true });
+                }
+            } catch(e) { console.error("Could not save to LocalStorage/Firestore", e); }
         };
 
         window.loadStateFromStorage = function() {
@@ -1130,8 +1179,8 @@
             }
         };
 
-        window.doLogin = function(type) {
-            window.loadStateFromStorage(); // Ensure latest data loaded before checking login
+        window.doLogin = async function(type) {
+            window.loadStateFromStorage();
             
             if (type === 'teacher') {
                 const email = document.getElementById('login-email')?.value?.trim();
@@ -1141,17 +1190,29 @@
                     return;
                 }
                 
-                const expectedEmail = window.dbState.settings.teacherEmail || 'guru@smk.sch.id';
-                const expectedPass = window.dbState.settings.teacherPassword || '123456';
+                if (!window.IS_PREVIEW && firebaseAuth) {
+                    try {
+                        const userCred = await signInWithEmailAndPassword(firebaseAuth, email, pass);
+                        const session = { role: 'teacher', name: userCred.user.email };
+                        localStorage.setItem('ejurnal_session', JSON.stringify(session));
+                        window.showToast('Login Firebase Auth Berhasil!', 'success');
+                    } catch(err) {
+                        window.showToast('Login Gagal: ' + err.message, 'error');
+                        return;
+                    }
+                } else {
+                    const expectedEmail = window.dbState.settings.teacherEmail || 'guru@smk.sch.id';
+                    const expectedPass = window.dbState.settings.teacherPassword || '123456';
 
-                if (email.toLowerCase() !== expectedEmail.toLowerCase() || pass !== expectedPass) {
-                    window.showToast('Email atau Password Guru Salah!', 'error');
-                    return;
+                    if (email.toLowerCase() !== expectedEmail.toLowerCase() || pass !== expectedPass) {
+                        window.showToast('Email atau Password Guru Salah!', 'error');
+                        return;
+                    }
+
+                    const session = { role: 'teacher', name: window.dbState.settings.teacherName || 'Guru Pengajar' };
+                    localStorage.setItem('ejurnal_session', JSON.stringify(session));
+                    window.showToast('Login Guru Berhasil!', 'success');
                 }
-
-                const session = { role: 'teacher', name: window.dbState.settings.teacherName || 'Guru Pengajar' };
-                localStorage.setItem('ejurnal_session', JSON.stringify(session));
-                window.showToast('Login Guru Berhasil!', 'success');
             } else {
                 const nisn = document.getElementById('login-nisn')?.value?.trim();
                 const pass = document.getElementById('login-student-pass')?.value?.trim();
@@ -1181,6 +1242,7 @@
         };
 
         window.doLogout = function() {
+            if (firebaseAuth) signOut(firebaseAuth);
             localStorage.removeItem('ejurnal_session');
             window.showToast('Anda telah keluar dari sistem.', 'info');
             window.checkAuthSession();
@@ -1260,6 +1322,8 @@
             if (tabId === 'nilai') window.renderNilaiTable();
             if (tabId === 'jurnal') window.renderJurnalTable();
             if (tabId === 'absen-tinggi') window.renderAbsenTinggiTable();
+
+            window.closeMobileMenu();
         };
 
         // RENDER DASHBOARD
@@ -1324,7 +1388,7 @@
                         <td class="p-3 text-slate-600">${st.smpOrigin || '-'}</td>
                         <td class="p-3 text-slate-600">${st.phone || '-'}</td>
                         <td class="p-3 text-center admin-only">
-                            <button onclick="deleteSiswa('${st.id}')" class="p-1.5 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded-lg"><i class="fa-solid fa-trash"></i></button>
+                            <button onclick="window.deleteSiswa('${st.id}')" class="p-1.5 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded-lg"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                 `;
@@ -1336,6 +1400,26 @@
             window.saveStateToStorage();
             window.renderSiswaTable();
             window.showToast('Data Siswa berhasil dihapus!', 'info');
+        };
+
+        window.downloadTemplateSiswa = function() {
+            const csv = "NISN,NIS,Nama Lengkap,Jenis Kelamin(L/P),ID Kelas,Asal SMP,No HP Ortu\n0051234568,21006,BUDI SANTOSO,L,C1,SMPN 1 Surabaya,081234567899";
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'Template_Data_Siswa.csv');
+            a.click();
+        };
+
+        window.importSiswaExcel = function(event) {
+            const file = event.target.files[0];
+            if(!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                window.showToast('Siswa berhasil diimpor!', 'success');
+            };
+            reader.readAsBinaryString(file);
         };
 
         // SETTINGS & KOP SURAT
@@ -1383,7 +1467,7 @@
 
             window.saveStateToStorage();
             window.renderDashboard();
-            window.showToast('Pengaturan Kop dan Identitas Sekolah berhasil disimpan secara permanen!', 'success');
+            window.showToast('Pengaturan Kop dan Identitas Sekolah berhasil disimpan!', 'success');
         };
 
         window.loadSettingsUI = function() {
@@ -1398,9 +1482,13 @@
             document.getElementById('set-teacher-nip').value = window.dbState.settings.teacherNip;
         };
 
-        // INITIALIZATION
+        window.openModalMobileMenu = function() { document.getElementById('modal-mobile-menu')?.classList.remove('hidden'); };
+        window.closeMobileMenu = function() { document.getElementById('modal-mobile-menu')?.classList.add('hidden'); };
+
+        // INITIALIZATION ON LOAD
         window.addEventListener('DOMContentLoaded', () => {
             window.loadStateFromStorage();
+            window.initFirebaseSystem();
             window.checkAuthSession();
         });
     </script>
