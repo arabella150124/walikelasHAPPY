@@ -1429,7 +1429,7 @@
         window.IS_PREVIEW = false; // Set false jika sudah memasukkan firebaseConfig asli
 
         const firebaseConfig = {
-             apiKey: "AIzaSyC-ZcI7-VRTOUK76EzRmp4yvVeRbt4qSaQ",
+            apiKey: "AIzaSyC-ZcI7-VRTOUK76EzRmp4yvVeRbt4qSaQ",
   authDomain: "waliwali-7e367.firebaseapp.com",
   projectId: "waliwali-7e367",
   storageBucket: "waliwali-7e367.firebasestorage.app",
@@ -1442,7 +1442,7 @@
         let isFirebaseActive = false;
 
         try {
-            if (!window.IS_PREVIEW && firebaseConfig.apiKey !== "AIzaSyC-ZcI7-VRTOUK76EzRmp4yvVeRbt4qSaQ") {
+            if (!window.IS_PREVIEW && firebaseConfig.apiKey !== "API_KEY_FIREBASE_ANDA") {
                 app = initializeApp(firebaseConfig);
                 auth = getAuth(app);
                 db = getFirestore(app);
